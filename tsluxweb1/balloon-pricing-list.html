@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balloon Décor Pricing Guide | tsLuxEvents</title>
+  <meta name="description" content="Single-page balloon décor pricing flyer for tsLuxEvents with package cards, add-ons, and contact details.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    :root {
+      --paper: #ffffff;
+      --ivory: #faf7f0;
+      --ink: #22251e;
+      --muted: #676154;
+      --accent: #6c8250;
+      --accent-deep: #4d5f36;
+      --gold: #b79a62;
+      --line: rgba(77, 95, 54, 0.16);
+      --shadow: 0 24px 72px rgba(34, 40, 28, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 20px;
+      background:
+        radial-gradient(circle at top left, rgba(108, 130, 80, 0.09), transparent 22%),
+        radial-gradient(circle at top right, rgba(183, 154, 98, 0.12), transparent 24%),
+        linear-gradient(180deg, #fffdf9 0%, #f1eadc 100%);
+      color: var(--ink);
+      font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    }
+
+    .flyer {
+      width: min(100%, 8.5in);
+      min-height: 11in;
+      margin: 0 auto;
+      padding: 26px;
+      background: var(--paper);
+      border: 1px solid rgba(77, 95, 54, 0.14);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero {
+      display: grid;
+      gap: 16px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero__top {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 66px;
+      height: 66px;
+      padding: 6px;
+      border-radius: 18px;
+      border: 1px solid rgba(77, 95, 54, 0.18);
+      background: #fff;
+      object-fit: cover;
+      flex: 0 0 auto;
+    }
+
+    .brand__copy {
+      display: grid;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .brand__copy strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.85rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .brand__copy span {
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .hero__title {
+      text-align: center;
+      display: grid;
+      gap: 6px;
+      justify-items: center;
+    }
+
+    .hero__title h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 3.8vw, 3.35rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+    }
+
+    .hero__title p {
+      margin: 0;
+      padding-top: 4px;
+      font-size: 0.82rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+      font-weight: 700;
+    }
+
+    .contact {
+      text-align: right;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+
+    .contact strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.86rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .subtitle::before,
+    .subtitle::after {
+      content: "";
+      height: 1px;
+      background: var(--line);
+    }
+
+    .subtitle span {
+      text-align: center;
+      font-size: 0.92rem;
+      color: var(--muted);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 18px;
+    }
+
+    .section__heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section__heading::before,
+    .section__heading::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .section__heading span {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .package-card {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      padding: 18px 18px 16px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 242, 233, 0.92));
+      box-shadow: 0 16px 34px rgba(34, 40, 28, 0.06);
+    }
+
+    .package-card--featured {
+      border-color: rgba(77, 95, 54, 0.32);
+      box-shadow: 0 18px 40px rgba(77, 95, 54, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .balloon-icon {
+      position: relative;
+      width: 66px;
+      height: 58px;
+      margin: 0 auto;
+    }
+
+    .balloon-icon span {
+      position: absolute;
+      display: block;
+      border-radius: 50% 50% 46% 46%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(205, 219, 185, 0.96));
+      border: 1px solid rgba(77, 95, 54, 0.14);
+      box-shadow: 0 8px 18px rgba(34, 40, 28, 0.08);
+    }
+
+    .balloon-icon::after {
+      content: "";
+      position: absolute;
+      left: 33px;
+      top: 26px;
+      width: 1px;
+      height: 29px;
+      background: linear-gradient(180deg, rgba(77, 95, 54, 0.38), transparent);
+    }
+
+    .balloon-icon--sage span:nth-child(1) {
+      width: 16px;
+      height: 21px;
+      left: 8px;
+      top: 4px;
+      background: linear-gradient(180deg, #dce5d2, #97ac76);
+    }
+
+    .balloon-icon--sage span:nth-child(2) {
+      width: 20px;
+      height: 26px;
+      left: 22px;
+      top: 0;
+      background: linear-gradient(180deg, #fffefb, #d5e0c4);
+    }
+
+    .balloon-icon--sage span:nth-child(3) {
+      width: 16px;
+      height: 21px;
+      right: 8px;
+      top: 4px;
+      background: linear-gradient(180deg, #f5ecdc, #c5ae7d);
+    }
+
+    .balloon-icon--gold span:nth-child(1) {
+      width: 16px;
+      height: 21px;
+      left: 8px;
+      top: 4px;
+      background: linear-gradient(180deg, #f8f4e8, #d3b98a);
+    }
+
+    .balloon-icon--gold span:nth-child(2) {
+      width: 20px;
+      height: 26px;
+      left: 22px;
+      top: 0;
+      background: linear-gradient(180deg, #ffffff, #e5ddcb);
+    }
+
+    .balloon-icon--gold span:nth-child(3) {
+      width: 16px;
+      height: 21px;
+      right: 8px;
+      top: 4px;
+      background: linear-gradient(180deg, #dce5d2, #90a875);
+    }
+
+    .balloon-icon--deep span:nth-child(1) {
+      width: 16px;
+      height: 21px;
+      left: 8px;
+      top: 4px;
+      background: linear-gradient(180deg, #d4dcc9, #70895a);
+    }
+
+    .balloon-icon--deep span:nth-child(2) {
+      width: 20px;
+      height: 26px;
+      left: 22px;
+      top: 0;
+      background: linear-gradient(180deg, #f9f7f0, #c4aa79);
+    }
+
+    .balloon-icon--deep span:nth-child(3) {
+      width: 16px;
+      height: 21px;
+      right: 8px;
+      top: 4px;
+      background: linear-gradient(180deg, #f4eadc, #a3824b);
+    }
+
+    .package-card h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      line-height: 1.05;
+      text-align: center;
+    }
+
+    .package-size,
+    .package-price {
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .package-size {
+      color: var(--accent-deep);
+      font-size: 0.98rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .package-price {
+      color: var(--accent);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.8rem;
+    }
+
+    .package-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .package-card li {
+      display: flex;
+      gap: 8px;
+    }
+
+    .package-card li::before {
+      content: "✓";
+      color: var(--accent-deep);
+      font-weight: 700;
+      flex: 0 0 auto;
+    }
+
+    .addons {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .addon {
+      min-height: 104px;
+      padding: 14px 14px 12px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.84);
+      display: grid;
+      gap: 10px;
+      align-content: start;
+      box-shadow: 0 12px 24px rgba(34, 40, 28, 0.05);
+    }
+
+    .addon__icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--accent-deep);
+      background: linear-gradient(180deg, rgba(109, 129, 80, 0.16), rgba(183, 154, 98, 0.12));
+      border: 1px solid rgba(77, 95, 54, 0.14);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .addon h3 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .addon .price {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) 132px;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .footer__notes {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .footer__notes strong {
+      color: var(--ink);
+    }
+
+    .qr {
+      justify-self: end;
+      width: 132px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      padding: 10px;
+      background: linear-gradient(180deg, #fff, #f5f1e8);
+      text-align: center;
+    }
+
+    .qr__box {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 14px;
+      border: 1px solid rgba(77, 95, 54, 0.18);
+      background:
+        radial-gradient(circle at 16% 16%, rgba(77, 95, 54, 0.92) 0 5px, transparent 6px),
+        radial-gradient(circle at 84% 16%, rgba(77, 95, 54, 0.92) 0 5px, transparent 6px),
+        radial-gradient(circle at 16% 84%, rgba(77, 95, 54, 0.92) 0 5px, transparent 6px),
+        radial-gradient(circle at 84% 84%, rgba(77, 95, 54, 0.92) 0 5px, transparent 6px),
+        linear-gradient(135deg, rgba(109, 129, 80, 0.2), rgba(183, 154, 98, 0.12)),
+        linear-gradient(180deg, #fefefe 0%, #f0e8d9 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .qr__box::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border-radius: 10px;
+      border: 8px solid rgba(77, 95, 54, 0.14);
+      background:
+        linear-gradient(90deg, rgba(77, 95, 54, 0.18) 0 12%, transparent 12% 24%, rgba(77, 95, 54, 0.18) 24% 36%, transparent 36% 48%, rgba(77, 95, 54, 0.18) 48% 60%, transparent 60% 100%),
+        linear-gradient(180deg, rgba(77, 95, 54, 0.18) 0 12%, transparent 12% 24%, rgba(77, 95, 54, 0.18) 24% 36%, transparent 36% 48%, rgba(77, 95, 54, 0.18) 48% 60%, transparent 60% 100%);
+      opacity: 0.58;
+    }
+
+    .qr__box::after {
+      content: "QR";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--accent-deep);
+      mix-blend-mode: multiply;
+    }
+
+    .qr__label {
+      margin-top: 10px;
+      color: var(--accent-deep);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 980px) {
+      .hero__top,
+      .footer {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__top {
+        justify-items: center;
+      }
+
+      .brand,
+      .contact {
+        text-align: center;
+      }
+
+      .contact {
+        justify-self: center;
+      }
+
+      .package-grid,
+      .addons {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .qr {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 10px;
+      }
+
+      .flyer {
+        padding: 16px 14px 14px;
+        border-radius: 22px;
+      }
+
+      .package-grid,
+      .addons {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__title h1 {
+        font-size: 2.05rem;
+      }
+
+      .subtitle span {
+        white-space: normal;
+        text-align: center;
+      }
+
+      .package-card h2 {
+        font-size: 1.35rem;
+      }
+
+      .addon {
+        min-height: auto;
+      }
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #fff;
+      }
+
+      .flyer {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="flyer">
+    <header class="hero">
+      <div class="hero__top">
+        <div class="brand">
+          <img src="favicon.png" alt="tsLuxEvents logo">
+          <div class="brand__copy">
+            <strong>tsLuxEvents</strong>
+            <span>Luxury event styling</span>
+          </div>
+        </div>
+
+        <div class="hero__title">
+          <h1>BALLOON DÉCOR PRICING</h1>
+          <p>Starting Packages</p>
+        </div>
+
+        <div class="contact">
+          <strong>Contact</strong>
+          tsluxevent@gmail.com<br>
+          @tsluxe.events
+        </div>
+      </div>
+
+      <div class="subtitle" aria-hidden="true">
+        <span>Up to 3 colors included in base design</span>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section__heading"><span>Balloon Packages</span></div>
+
+      <div class="package-grid">
+        <article class="package-card">
+          <div class="balloon-icon balloon-icon--sage" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <h2>Petite Balloon Styling</h2>
+          <div class="package-size">4–6 ft</div>
+          <div class="package-price">Starting at $225</div>
+          <ul>
+            <li>1 garland</li>
+            <li>Great for cake tables or small walls</li>
+            <li>Indoor installation</li>
+            <li>Light customization</li>
+          </ul>
+        </article>
+
+        <article class="package-card package-card--featured">
+          <div class="balloon-icon balloon-icon--gold" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <h2>Signature Balloon Styling</h2>
+          <div class="package-size">8–10 ft</div>
+          <div class="package-price">Starting at $365</div>
+          <ul>
+            <li>1 fuller garland</li>
+            <li>Ideal for photo backdrops and focal walls</li>
+            <li>Indoor or outdoor installation</li>
+            <li>Moderate customization</li>
+          </ul>
+        </article>
+
+        <article class="package-card">
+          <div class="balloon-icon balloon-icon--deep" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <h2>Statement Balloon Styling</h2>
+          <div class="package-size">12–15 ft</div>
+          <div class="package-price">Starting at $525</div>
+          <ul>
+            <li>1 large garland</li>
+            <li>Best for entrances or main photo areas</li>
+            <li>Larger visual impact</li>
+            <li>High customization</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__heading"><span>Popular Add-Ons</span></div>
+
+      <div class="addons">
+        <article class="addon">
+          <div class="addon__icon">+</div>
+          <h3>Extra Balloon Color</h3>
+          <div class="price">+ $20</div>
+        </article>
+
+        <article class="addon">
+          <div class="addon__icon">✦</div>
+          <h3>Premium Balloon Finish</h3>
+          <div class="price">+ $45</div>
+        </article>
+
+        <article class="addon">
+          <div class="addon__icon">●</div>
+          <h3>Jumbo Balloons</h3>
+          <div class="price">+ $55</div>
+        </article>
+
+        <article class="addon">
+          <div class="addon__icon">A</div>
+          <h3>Vinyl Name</h3>
+          <div class="price">+ $60</div>
+        </article>
+
+        <article class="addon">
+          <div class="addon__icon">✿</div>
+          <h3>Floral Inserts</h3>
+          <div class="price">+ $65</div>
+        </article>
+
+        <article class="addon">
+          <div class="addon__icon">↗</div>
+          <h3>Outdoor Setup</h3>
+          <div class="price">+ $70</div>
+        </article>
+
+        <article class="addon">
+          <div class="addon__icon">✎</div>
+          <h3>Custom Sign</h3>
+          <div class="price">+ $75</div>
+        </article>
+
+        <article class="addon">
+          <div class="addon__icon">≡</div>
+          <h3>Second Balloon Garland</h3>
+          <div class="price">+ $125</div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__notes">
+        <div><strong>Custom designs available</strong></div>
+        <div>Prices may vary depending on design and installation</div>
+        <div>Travel fees may apply</div>
+        <div><strong>Scan QR Code or Visit Our Website</strong></div>
+        <div>tsluxevent@gmail.com • @tsluxe.events</div>
+      </div>
+
+      <div class="qr" aria-label="QR code placeholder">
+        <div class="qr__box"></div>
+        <div class="qr__label">Scan QR Code</div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

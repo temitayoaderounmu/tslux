@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    FILE: packages/balloon-decor.html
+    PURPOSE:
+    - Detail page for balloon decor services.
+
+    BEGINNER NOTES:
+    - Update package descriptions here if your balloon offering changes.
+    - Pricing logic for booking estimates is controlled in script.js.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balloon Decor Packages | tsLuxEvents</title>
+  <meta name="description" content="Explore balloon decor package ideas and booking options from tsLuxEvents.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body data-page="services" data-base="../">
+  <div id="site-header"></div>
+
+  <main id="main-content" class="section-shell package-hero">
+    <section class="package-hero__layout">
+      <div class="package-hero__copy">
+        <span class="eyebrow">Balloon Decor Packages</span>
+        <h1>Organic balloon styling for entry moments, focal walls, and celebration corners.</h1>
+        <p class="lead">
+          Balloon decor brings color, shape, and a polished finish to birthdays, showers, and intimate events.
+        </p>
+
+        <div class="pill-row">
+          <span class="pill">Custom color palette</span>
+          <span class="pill">Indoor or outdoor events</span>
+          <span class="pill">Pairs with backdrops</span>
+        </div>
+
+        <div class="button-row">
+          <a class="button button--primary" href="../pages/booking.html?service=balloonDecor">Book This Service</a>
+          <a class="button button--secondary" href="../pages/gallery.html">View Gallery</a>
+        </div>
+      </div>
+
+      <div class="package-hero__gallery">
+        <img src="../assets/images/balloon1.jpg" alt="Balloon decor styling" decoding="async">
+        <img src="../assets/images/purpleshimmer1.jpeg" alt="Balloon styling with backdrop" loading="lazy" decoding="async">
+        <img src="../assets/images/balloon.jpg" alt="Balloon decor with layered panels" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <section class="section-block section-block--last">
+      <div class="pricing-grid">
+        <article class="price-card">
+          <span class="eyebrow">Option One</span>
+          <h3>Petite Balloon Styling</h3>
+          <div class="price-value">$225</div>
+          <p>A smaller setup for cake areas and intimate home events.</p>
+        </article>
+
+        <article class="price-card">
+          <span class="eyebrow">Option Two</span>
+          <h3>Signature Balloon Styling</h3>
+          <div class="price-value">$365</div>
+          <p>A balanced install for focal walls, photos, and mid-size spaces.</p>
+        </article>
+
+        <article class="price-card">
+          <span class="eyebrow">Option Three</span>
+          <h3>Statement Balloon Styling</h3>
+          <div class="price-value">$525</div>
+          <p>A fuller install for bigger spaces and a stronger visual moment.</p>
+        </article>
+      </div>
+
+      <div class="panel panel--highlight" style="margin-top: 18px;">
+        <h3>Ready to choose your tier?</h3>
+        <p>
+          Use the booking page to pick your tier and add any extras you want.
+        </p>
+        <div class="button-row">
+          <a class="button button--primary" href="../pages/booking.html?service=balloonDecor">Build Balloon Estimate</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

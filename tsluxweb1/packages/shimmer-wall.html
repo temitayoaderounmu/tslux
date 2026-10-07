@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    FILE: packages/shimmer-wall.html
+    PURPOSE:
+    - Detailed shimmer wall package page with package tiers, add-ons, calculator, and Add to Booking button.
+
+    BEGINNER NOTES:
+    - The calculator on this page is powered by the shimmerWall section in script.js.
+    - Update shimmerWall.packageOptions to change tier names or tier prices.
+    - Update shimmerWall.addons to change add-on names, descriptions, or prices.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shimmer Wall Package | tsLuxEvents</title>
+  <meta name="description" content="Explore shimmer wall package tiers, add-ons, and a live mini estimate from tsLuxEvents.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body data-page="shimmer" data-base="../">
+  <div id="site-header"></div>
+
+  <main id="main-content" class="section-shell package-hero">
+    <section class="package-hero__layout">
+      <div class="package-hero__copy">
+        <span class="eyebrow">Shimmer Wall Package</span>
+        <h1>Backdrop styling designed to feel polished and celebration-ready.</h1>
+        <p class="lead">Choose your shimmer wall size, then add the details that fit your event.</p>
+
+        <div class="pill-row">
+          <span class="pill">Three balloon colors included</span>
+          <span class="pill">Setup and teardown included</span>
+          <span class="pill">Ideal for birthdays and graduations</span>
+        </div>
+
+        <div class="button-row">
+          <a class="button button--secondary" href="../pages/gallery.html">View Gallery</a>
+          <a class="button button--ghost" href="../pages/booking.html?service=shimmerWall">Open Booking Form</a>
+        </div>
+      </div>
+
+      <div class="package-hero__gallery">
+        <img src="../assets/images/purpleshimmer.jpeg" alt="Shimmer wall styling" decoding="async">
+        <img src="../assets/images/balloon1.jpg" alt="Shimmer wall with balloon styling" loading="lazy" decoding="async">
+        <img src="../assets/images/custom.JPG" alt="Layered shimmer wall and backdrop styling" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="package-layout">
+        <article class="summary-card">
+          <span class="eyebrow">Included</span>
+          <h3>What comes with the package</h3>
+          <ul class="list">
+            <li>Shimmer wall backdrop in your chosen size</li>
+            <li>Organic balloon styling in up to three colors</li>
+            <li>On-site setup and breakdown</li>
+            <li>Flexible styling for birthdays and graduations</li>
+          </ul>
+        </article>
+
+        <article class="summary-card">
+          <span class="eyebrow">Best For</span>
+          <h3>Popular uses for this package</h3>
+          <ul class="list">
+            <li>Birthday photo areas</li>
+            <li>Graduation focal walls</li>
+            <li>Event hall focal points</li>
+            <li>Private celebration corners</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block section-block--last" data-shimmer-calculator>
+      <div class="section-heading">
+        <span class="eyebrow">Package Calculator</span>
+        <h2>Build your shimmer wall estimate</h2>
+        <p>Select your tier and add-ons, then send those choices to booking.</p>
+      </div>
+
+      <div class="package-layout">
+        <div class="summary-stack">
+          <article class="detail-card">
+            <h3>Choose your package tier</h3>
+            <div id="shimmer-tier-options" class="tier-choice-grid"></div>
+          </article>
+
+          <article class="detail-card">
+            <h3>Select add-ons</h3>
+            <div id="shimmer-addon-options" class="addon-choice-grid"></div>
+          </article>
+        </div>
+
+        <aside class="estimate-card">
+          <span class="eyebrow">Mini Estimate</span>
+          <h3>Your shimmer wall selection</h3>
+          <div id="shimmer-estimate-breakdown" class="estimate-breakdown"></div>
+
+          <div class="estimate-total">
+            <div>
+              <span class="eyebrow">Current Total</span>
+            <p>Starting estimate before event-specific adjustments.</p>
+            </div>
+            <div class="estimate-total__amount" id="shimmer-estimate-total">$0</div>
+          </div>
+
+          <div class="button-row">
+            <a class="button button--primary button--block" id="add-shimmer-to-booking" href="../pages/booking.html?service=shimmerWall">Save & Continue to Booking</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

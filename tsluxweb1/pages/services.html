@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    FILE: pages/services.html
+    PURPOSE:
+    - Main service overview page with links to package detail pages and booking.
+
+    BEGINNER NOTES:
+    - To change visible starting prices, update the matching values in script.js and here.
+    - To add a new service card, copy one service-card block and update the link.
+    - If you add a new service that should affect estimates, add it in PRICING_DATA inside script.js.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & Packages | tsLuxEvents</title>
+  <meta name="description" content="Explore shimmer wall packages, balloon decor, mocktail styling, and dessert table styling from tsLuxEvents.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body data-page="services" data-base="../">
+  <div id="site-header"></div>
+
+  <main id="main-content" class="section-shell">
+    <section class="page-intro">
+      <div class="page-intro__header">
+        <div>
+          <span class="eyebrow">Services & Packages</span>
+          <h1>Choose your package, then make it yours</h1>
+        </div>
+        <p>Start with the service that fits your event, then add the extras you want.</p>
+      </div>
+    </section>
+
+    <section class="service-overview section-block">
+      <div class="card-grid card-grid--three">
+        <article class="service-card">
+          <img src="../assets/images/shimmer.jpg" alt="Shimmer wall package" loading="lazy" decoding="async">
+          <div class="service-card__body">
+            <h3>Shimmer Wall Package</h3>
+            <p>Backdrop styling with balloon accents for photo-ready events.</p>
+            <div class="price-value">From $375</div>
+            <div class="button-row">
+              <a class="button button--primary" href="../packages/shimmer-wall.html">View Package</a>
+              <a class="button button--secondary" href="../pages/booking.html?service=shimmerWall">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="../assets/images/balloon1.jpg" alt="Balloon decor package" loading="lazy" decoding="async">
+          <div class="service-card__body">
+            <h3>Balloon Decor Packages</h3>
+            <p>Organic balloon installs for entrances, walls, and party corners.</p>
+            <div class="price-value">From $225</div>
+            <div class="button-row">
+              <a class="button button--primary" href="../packages/balloon-decor.html">View Package</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="../assets/images/mocktail.jpg" alt="Mocktail bar styling" loading="lazy" decoding="async">
+          <div class="service-card__body">
+            <h3>Mocktail Bar Service</h3>
+            <p>A polished beverage station that feels guest-ready.</p>
+            <div class="price-value">From $175</div>
+            <div class="button-row">
+              <a class="button button--primary" href="../packages/mocktail-bar.html">View Package</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="../assets/images/desert1.JPG" alt="Dessert table styling" loading="lazy" decoding="async">
+          <div class="service-card__body">
+            <h3>Dessert Table Styling</h3>
+            <p>Styled dessert presentation with a clean, coordinated finish.</p>
+            <div class="price-value">From $145</div>
+            <div class="button-row">
+              <a class="button button--primary" href="../packages/dessert-table.html">View Package</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="../assets/images/mocktail1.jpg" alt="Custom event styling package" loading="lazy" decoding="async">
+          <div class="service-card__body">
+            <h3>Custom Event Mix</h3>
+            <p>Combine balloon styling, table styling, signage, florals, and more.</p>
+            <div class="price-value">Custom Quote</div>
+            <div class="button-row">
+              <a class="button button--secondary" href="../pages/booking.html">Build a Custom Estimate</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="panel" style="margin-top: 18px;">
+        <span class="eyebrow">Custom Quotes</span>
+        <h3>Need something different?</h3>
+        <p>If you want a custom balloon setup, use booking and we’ll tailor the quote to your event.</p>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="feature-grid feature-grid--two">
+        <article class="panel">
+          <span class="eyebrow">Combo Packages</span>
+          <h3>Popular pairings</h3>
+          <ul class="list">
+            <li>Shimmer Wall + Balloon Decor</li>
+            <li>Shimmer Wall + Mocktail Bar</li>
+            <li>Balloon Decor + Dessert Table Styling</li>
+            <li>Backdrop Styling + Table Styling</li>
+          </ul>
+        </article>
+
+        <article class="panel panel--highlight">
+          <span class="eyebrow">Interactive Pricing</span>
+          <h3>Estimate your package before you submit</h3>
+          <p>Use the booking page to build a package and see the total.</p>
+          <div class="button-row">
+            <a class="button button--primary" href="../pages/booking.html">Open Booking Form</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    FILE: pages/booking.html
+    PURPOSE:
+    - Booking page with interactive pricing, combo packages, and EmailJS submission.
+
+    EMAILJS SETUP NOTES:
+    - The EmailJS browser library loads below.
+    - Paste your EmailJS Public Key, Service ID, and Template ID inside script.js.
+    - Switch EMAILJS_CONFIG.enabled to true after adding your real credentials.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now | tsLuxEvents</title>
+  <meta name="description" content="Build your tsLuxEvents package, preview the total estimate, and send your booking request online.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="../script.js" defer></script>
+</head>
+<body data-page="booking" data-base="../">
+  <div id="site-header"></div>
+
+  <main id="main-content" class="section-shell">
+    <section class="page-intro">
+      <div class="page-intro__header">
+        <div>
+          <span class="eyebrow">Book Now</span>
+          <h1>Build your package and send your request</h1>
+        </div>
+        <p>Choose a package, add the extras you want, and review the total before you submit.</p>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="booking-layout">
+        <div class="booking-form-wrap">
+          <span class="eyebrow">Your Package</span>
+          <h2>Create your event estimate</h2>
+
+          <div class="summary-stack">
+            <article class="detail-card">
+              <h3>1. Choose one main package</h3>
+              <div id="main-service-options" class="pricing-choice-grid"></div>
+            </article>
+
+            <article class="detail-card">
+              <h3>2. Choose your package tier</h3>
+              <div id="main-tier-options" class="tier-choice-grid"></div>
+            </article>
+
+            <article class="detail-card">
+              <h3>3. Add upgrades for your main package</h3>
+              <div id="main-addon-options" class="addon-choice-grid"></div>
+            </article>
+
+            <article class="detail-card">
+              <h3>4. Add extra services and choose their tiers</h3>
+              <div id="combo-service-options" class="combo-choice-grid"></div>
+            </article>
+          </div>
+
+          <form id="booking-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="booking-name">Name</label>
+                <input id="booking-name" name="name" type="text" autocomplete="name" placeholder="Your full name">
+              </div>
+
+              <div class="field">
+                <label for="booking-email">Email</label>
+                <input id="booking-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+              </div>
+
+              <div class="field">
+                <label for="booking-phone">Phone</label>
+                <input id="booking-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 555-5555">
+              </div>
+
+              <div class="field">
+                <label for="booking-date">Event Date</label>
+                <input id="booking-date" name="eventDate" type="date">
+              </div>
+
+              <div class="field field--full">
+                <label for="booking-location">Event Location</label>
+                <input id="booking-location" name="location" type="text" placeholder="City, venue, or event address">
+              </div>
+
+              <div class="field field--full">
+              <label for="booking-notes">Event Notes</label>
+                <textarea id="booking-notes" name="notes" placeholder="Share your colors, theme, guest count, or special details."></textarea>
+              </div>
+            </div>
+
+            <p class="field-note">Include your colors, event type, and any key details.</p>
+
+            <button class="button button--primary" id="booking-submit" type="submit">Send Booking Request</button>
+            <div id="booking-message" class="form-message" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <aside class="estimate-card">
+          <span class="eyebrow">Total Estimate</span>
+          <h3>Current selection summary</h3>
+          <div id="booking-estimate-breakdown" class="estimate-breakdown"></div>
+
+          <div class="estimate-total">
+            <div>
+              <span class="eyebrow">Estimated Total</span>
+              <p>Live estimate based on your package and extras.</p>
+            </div>
+            <div class="estimate-total__amount" id="booking-estimate-total">$0</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-block section-block--last">
+      <div class="section-heading">
+        <span class="eyebrow">FAQ</span>
+        <h2>Quick answers before you book</h2>
+      </div>
+
+      <div class="card-grid card-grid--three">
+        <article class="panel">
+          <h3>How far in advance should I book?</h3>
+          <p>As soon as you know your date. Popular weekends fill up quickly, especially in spring and summer.</p>
+        </article>
+
+        <article class="panel">
+          <h3>Do you require a deposit?</h3>
+          <p>Yes. A deposit is required to hold your date. The final quote confirms the current amount.</p>
+        </article>
+
+        <article class="panel">
+          <h3>Do you travel outside DFW?</h3>
+          <p>Yes, in many cases. Share your event location and we’ll confirm travel availability and fees.</p>
+        </article>
+
+        <article class="panel">
+          <h3>How long does setup take?</h3>
+          <p>Most balloon installs take about 1–2 hours, depending on size, access, and customization.</p>
+        </article>
+
+        <article class="panel">
+          <h3>Can I choose my colors?</h3>
+          <p>Absolutely. We’ll match your event theme and help you choose colors that look clean in photos.</p>
+        </article>
+
+        <article class="panel">
+          <h3>Do you handle breakdown?</h3>
+          <p>Yes. Breakdown or removal can be requested when you book, depending on the setup.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    FILE: index.html
+    PURPOSE:
+    - This is the homepage for tsLuxEvents.
+    - It introduces the brand, highlights services, and drives visitors to services or booking.
+
+    BEGINNER NOTES:
+    - To change homepage wording, edit the text directly inside this file.
+    - To replace images, swap the src values with your real image paths.
+    - Shared layout styles live in styles.css
+    - Shared interactivity and reusable header/footer live in script.js
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tsLuxEvents | Luxury Balloon Decor & Event Styling</title>
+  <meta name="description" content="tsLuxEvents creates elegant balloon decor, shimmer wall backdrops, mocktail bar styling, and dessert table styling for memorable celebrations.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="home" data-base="">
+  <div id="site-header"></div>
+
+  <main id="main-content">
+    <section class="hero section-shell">
+      <div class="hero__copy">
+        <span class="eyebrow">Luxury Event Styling</span>
+        <h1>Elegant balloon decor for polished celebrations.</h1>
+        <p class="lead">
+          tsLuxEvents styles birthdays, showers, graduations, and intimate events with shimmer walls,
+          balloon installs, mocktail bars, and dessert tables.
+        </p>
+
+        <div class="pill-row">
+          <span class="pill">Custom colors</span>
+          <span class="pill">Photo-ready focal points</span>
+          <span class="pill">Easy add-ons</span>
+        </div>
+
+        <div class="button-row">
+          <a class="button button--primary" href="pages/services.html">View Packages</a>
+          <a class="button button--secondary" href="pages/booking.html">Book Now</a>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <!--
+          Replace these images with your real photos when ready.
+          Keep the main image larger than the two smaller supporting images.
+        -->
+        <img class="hero__image hero__image--large" src="assets/images/custom.JPG" alt="Elegant balloon and backdrop styling by tsLuxEvents">
+        <img class="hero__image" src="assets/images/icecream1.jpeg" alt="Shimmer wall styling by tsLuxEvents" loading="lazy" decoding="async">
+        <img class="hero__image" src="assets/images/mocktail.jpg" alt="Mocktail bar styling by tsLuxEvents" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <section class="section-shell section-block">
+      <div class="section-heading">
+        <span class="eyebrow">About tsLuxEvents</span>
+        <h2>Thoughtful styling for milestone moments</h2>
+        <p>We create clean, elevated decor that gives your event a beautiful focal point.</p>
+      </div>
+
+      <div class="feature-grid feature-grid--two">
+        <article class="panel">
+          <h3>What clients book most</h3>
+          <ul class="list">
+            <li>Shimmer walls with balloon styling</li>
+            <li>Balloon installs for focal areas</li>
+            <li>Mocktail and dessert presentation</li>
+          </ul>
+        </article>
+
+        <article class="panel panel--highlight">
+          <h3>Designed to be flexible</h3>
+          <p>Start with one package, then add the details that fit your event.</p>
+          <a class="text-link" href="pages/booking.html">Get an estimate</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell section-block">
+      <div class="section-heading">
+        <span class="eyebrow">Featured Services</span>
+        <h2>Popular ways to style your event</h2>
+      </div>
+
+      <div class="card-grid card-grid--four">
+        <article class="service-card">
+          <img src="assets/images/shimmer.jpg" alt="Shimmer wall package preview" loading="lazy" decoding="async">
+          <div class="service-card__body">
+            <h3>Shimmer Wall Package</h3>
+            <p>Photo-ready backdrops for birthdays, graduations, and milestone moments.</p>
+            <a class="button button--ghost" href="packages/shimmer-wall.html">View Details</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="assets/images/balloon1.jpg" alt="Balloon decor package preview" loading="lazy" decoding="async">
+          <div class="service-card__body">
+            <h3>Balloon Decor</h3>
+            <p>Organic balloon styling for entrances, walls, and celebration corners.</p>
+            <a class="button button--ghost" href="pages/booking.html?service=balloonDecor">Book This Service</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="assets/images/mocktail1.jpg" alt="Mocktail bar service preview" loading="lazy" decoding="async">
+          <div class="service-card__body">
+            <h3>Mocktail Bar Service</h3>
+            <p>A polished beverage feature that feels special without being overwhelming.</p>
+            <a class="button button--ghost" href="pages/booking.html?service=mocktailBar">Book This Service</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="assets/images/icecream.jpeg" alt="Dessert table styling preview" loading="lazy" decoding="async">
+          <div class="service-card__body">
+            <h3>Dessert Table Styling</h3>
+            <p>Layered dessert displays that feel clean, coordinated, and luxe.</p>
+            <a class="button button--ghost" href="pages/booking.html?service=dessertTable">Book This Service</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell section-block">
+      <div class="section-heading">
+        <span class="eyebrow">How Booking Works</span>
+        <h2>Simple, clear, and easy to customize</h2>
+      </div>
+
+      <div class="card-grid card-grid--three">
+        <article class="panel">
+          <div class="step-number">01</div>
+          <h3>Choose your main package</h3>
+          <p>Pick the service that will anchor your event.</p>
+        </article>
+
+        <article class="panel">
+          <div class="step-number">02</div>
+          <h3>Add services and upgrades</h3>
+          <p>Add the details that complete the look.</p>
+        </article>
+
+        <article class="panel">
+          <div class="step-number">03</div>
+          <h3>Send your inquiry</h3>
+          <p>Share your date, location, and notes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell section-block">
+      <div class="section-heading">
+        <span class="eyebrow">Client Notes</span>
+        <h2>Kind words from celebrations we love to style</h2>
+      </div>
+
+      <div class="card-grid card-grid--three">
+        <article class="quote-card">
+          <p>“The setup looked so elegant in person and even better in photos. It gave the room exactly what it needed.”</p>
+          <strong>Birthday Host</strong>
+        </article>
+
+        <article class="quote-card">
+          <p>“Everything felt clean, polished, and thoughtfully placed. The backdrop was the highlight of the event.”</p>
+          <strong>Graduation Client</strong>
+        </article>
+
+        <article class="quote-card">
+          <p>“The styling made the whole space feel complete and the booking process was very easy to follow.”</p>
+          <strong>Private Event Host</strong>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section-shell section-block section-block--last">
+      <div class="contact-banner">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2>Ready to start planning?</h2>
+          <p>Reach out through booking or connect with tsLuxEvents on social.</p>
+        </div>
+
+        <div class="contact-banner__details">
+          <a href="mailto:tsluxevent@gmail.com">tsluxevent@gmail.com</a>
+          <a href="https://www.instagram.com/tsluxe.events" target="_blank" rel="noreferrer">@tsluxe.events</a>
+          <a href="https://www.tiktok.com/@tsluxe8" target="_blank" rel="noreferrer">@tsluxe8</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    FILE: pages/gallery.html
+    PURPOSE:
+    - Filterable gallery page for clients to browse styling inspiration.
+
+    BEGINNER NOTES:
+    - To add another gallery item, copy one figure.gallery-card block.
+    - Update image path, alt text, title, caption, and category values.
+    - Category values must match the filter button values in this file.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | tsLuxEvents</title>
+  <meta name="description" content="View balloon decor, shimmer walls, mocktail styling, and dessert table inspiration from tsLuxEvents.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body data-page="gallery" data-base="../">
+  <div id="site-header"></div>
+
+  <main id="main-content" class="section-shell">
+    <section class="page-intro">
+      <div class="page-intro__header">
+        <div>
+          <span class="eyebrow">Gallery</span>
+          <h1>Browse event styling inspiration</h1>
+        </div>
+        <p>
+          Explore looks for birthdays, graduations, showers, and intimate celebrations.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-block section-block--last">
+      <div class="filter-bar" aria-label="Gallery filters">
+        <button class="filter-button is-active" type="button" data-filter-btn="all" aria-pressed="true">All</button>
+        <button class="filter-button" type="button" data-filter-btn="balloon" aria-pressed="false">Balloon Decor</button>
+        <button class="filter-button" type="button" data-filter-btn="shimmer" aria-pressed="false">Shimmer Wall</button>
+        <button class="filter-button" type="button" data-filter-btn="mocktail" aria-pressed="false">Mocktail Bar</button>
+        <button class="filter-button" type="button" data-filter-btn="dessert" aria-pressed="false">Dessert Styling</button>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-card" data-gallery-card data-category="balloon">
+          <img src="../assets/images/balloon1.jpg" alt="Organic balloon styling for a celebration" loading="lazy" decoding="async">
+          <figcaption>
+            <strong>Organic Balloon Install</strong>
+            <span>Clean balloon styling for birthdays and intimate celebrations.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="balloon shimmer">
+          <img src="../assets/images/purpleshimmer.jpeg" alt="Silver shimmer wall with purple balloon garlands and floral accents" loading="lazy" decoding="async">
+          <figcaption>
+            <strong>Purple Shimmer Backdrop</strong>
+            <span>A silver shimmer wall accented with organic purple balloon garlands and elegant floral details.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="mocktail">
+          <img src="../assets/images/mocktail.jpg" alt="Mocktail bar styling" loading="lazy" decoding="async">
+          <figcaption>
+            <strong>Styled Mocktail Station</strong>
+            <span>A beverage feature that feels clean, pretty, and guest-ready.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="dessert">
+          <img src="../assets/images/desert.JPG" alt="Dessert table styling with layered presentation" loading="lazy" decoding="async">
+          <figcaption>
+            <strong>Dessert Table Styling</strong>
+            <span>Layered presentation for sweets, pastries, and table decor accents.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="balloon shimmer">
+          <img src="../assets/images/custom.JPG" alt="Layered backdrop styling with balloon accents" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="balloon shimmer">
+          <img src="../assets/images/purpleshimmer1.jpeg" alt="Purple draped shimmer wall with organic balloon garlands" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="balloon">
+          <img src="../assets/images/smileyarch.jpeg" alt="Pastel smiley face themed balloon arch" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="shimmer">
+          <img src="../assets/images/shimmer.jpg" alt="Shimmer wall focal setup with layered balloon styling" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="mocktail">
+          <img src="../assets/images/mocktail1.jpg" alt="Styled service table with coordinated beverage presentation" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="mocktail">
+          <img src="../assets/images/mocktail2.jpeg" alt="Two signature mocktail jars styled together" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="mocktail">
+          <img src="../assets/images/mocktail3.jpeg" alt="Mocktail jars and drink pouches displayed on risers" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="dessert">
+          <img src="../assets/images/icecream.jpeg" alt="Styled ice cream bar setup" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="dessert">
+          <img src="../assets/images/icecream1.jpeg" alt="Ice cream bar detail from a side angle" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="dessert">
+          <img src="../assets/images/icecream2.jpeg" alt="Ice cream bar detail from the center angle" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="dessert">
+          <img src="../assets/images/icecream3.jpeg" alt="Ice cream bar detail with layered serving display" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="dessert">
+          <img src="../assets/images/fruitcup.jpg" alt="Fruit cup display for a dessert table" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="dessert">
+          <img src="../assets/images/desert1.JPG" alt="Dessert table accent display" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="gallery-card" data-gallery-card data-category="dessert mocktail">
+          <img src="../assets/images/desert2.jpeg" alt="Two-tier cake with styled beverage display" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

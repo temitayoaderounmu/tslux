@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSquared Luxe Events | Editorial Pricing Sheet</title>
+  <style>
+    /*
+      TSquared Luxe Events
+      Option 2: Editorial Black + Cream
+
+      WHY THIS VERSION:
+      - More upscale and fashion-inspired
+      - Good for Instagram story posts, PDFs, and client guides
+      - Still easy to customize with your own brand colors
+
+      EDIT QUICKLY:
+      - Change :root colors
+      - Search "EDIT HERE"
+      - Replace the example "3-color theme" wording if you later offer 4 colors in base pricing
+    */
+
+    :root {
+      --bg: #131111;
+      --paper: #f3eee7;
+      --panel: #1c1918;
+      --panel-soft: #272321;
+      --text: #f8f4ef;
+      --text-dark: #2a2522;
+      --muted: #bbaea3;
+      --accent: #d9aa68;
+      --line: rgba(217, 170, 104, 0.26);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 26px;
+      background:
+        radial-gradient(circle at 10% 15%, rgba(217, 170, 104, 0.18), transparent 18%),
+        radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.05), transparent 20%),
+        linear-gradient(180deg, #111010 0%, #1b1716 100%);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+    }
+
+    .poster {
+      width: 1080px;
+      margin: 0 auto;
+      border-radius: 28px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #161211, #0f0d0d);
+      border: 1px solid rgba(217, 170, 104, 0.18);
+      box-shadow: 0 26px 90px rgba(0, 0, 0, 0.38);
+    }
+
+    .top {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      min-height: 300px;
+    }
+
+    .hero {
+      padding: 48px 46px 40px;
+      background:
+        linear-gradient(135deg, rgba(217, 170, 104, 0.12), transparent 48%),
+        linear-gradient(180deg, #191514 0%, #141111 100%);
+    }
+
+    .hero small,
+    .right-card small,
+    .mini-card small {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 58px;
+      font-weight: 500;
+      line-height: 0.98;
+    }
+
+    .hero p {
+      margin: 18px 0 0;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #ddd0c6;
+      max-width: 580px;
+    }
+
+    .right-card {
+      padding: 40px 34px;
+      background: linear-gradient(180deg, #f4eee7 0%, #ede4d9 100%);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right-card h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      margin: 0 0 12px;
+      font-weight: 500;
+    }
+
+    .right-card p {
+      margin: 0;
+      color: #5b514c;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .right-card .tag {
+      margin-top: 18px;
+      display: inline-block;
+      align-self: flex-start;
+      border: 1px solid rgba(42, 37, 34, 0.16);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+
+    .body {
+      padding: 30px 34px 38px;
+      display: grid;
+      gap: 24px;
+    }
+
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .heading h3 {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .heading .line {
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .pricing-card {
+      background: linear-gradient(180deg, #1a1716, #141211);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .pricing-card.featured {
+      outline: 2px solid rgba(217, 170, 104, 0.48);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    .pricing-card .name {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .pricing-card .size {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .pricing-card .desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #d6c8bd;
+      min-height: 64px;
+    }
+
+    .pricing-card .price {
+      margin-top: 14px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 44px;
+      color: var(--accent);
+    }
+
+    .pricing-card ul {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: #cdbfb4;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+    }
+
+    .mini-card,
+    .table-card {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .mini-card {
+      background: linear-gradient(180deg, #efe5da, #f7f2ec);
+      color: var(--text-dark);
+      padding: 24px 22px;
+    }
+
+    .mini-card h4 {
+      margin: 0 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    .mini-card p,
+    .mini-card li {
+      color: #5a514b;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .mini-card ul {
+      padding-left: 18px;
+      margin: 10px 0 0;
+    }
+
+    .table-card {
+      background: linear-gradient(180deg, #171413, #121010);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(217, 170, 104, 0.16);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    th {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+      background: rgba(217, 170, 104, 0.05);
+    }
+
+    td {
+      color: #dccdc1;
+    }
+
+    td:last-child {
+      color: var(--accent);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    .contact {
+      background: #f4eee7;
+      color: #2b2522;
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .contact h5 {
+      margin: 0 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
+      color: #7a6d64;
+    }
+
+    .contact p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 1120px) {
+      body {
+        padding: 12px;
+      }
+
+      .poster {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .top,
+      .pricing-grid,
+      .two-col,
+      .bottom {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <section class="top">
+      <div class="hero">
+        <!-- EDIT HERE: main title block -->
+        <small>TSquared Luxe Events</small>
+        <h1>Shimmer Wall<br>Starting Prices</h1>
+        <p>
+          Designed for clients who want a luxe photo backdrop with balloons, arches, signs,
+          and extra styling. Every base package starts with a shimmer wall and a 3-color balloon theme.
+        </p>
+      </div>
+      <aside class="right-card">
+        <small>Good to Know</small>
+        <h2>Simple starting prices for easy client selection</h2>
+        <p>
+          Clients can start with a shimmer wall package, then add arches, signs,
+          florals, extra colors, and other styling details as needed.
+        </p>
+        <div class="tag">3 colors included in base design</div>
+      </aside>
+    </section>
+
+    <section class="body">
+      <div class="heading">
+        <h3>Base Shimmer Wall Packages</h3>
+        <div class="line"></div>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <div class="name">Mini Luxe</div>
+          <div class="size">8 x 8 ft</div>
+          <div class="desc">For smaller birthdays, apartment events, and compact venue photo corners.</div>
+          <div class="price">$385</div>
+          <ul>
+            <li>Shimmer wall base</li>
+            <li>1 balloon garland</li>
+            <li>Up to 3 colors</li>
+            <li>Setup + breakdown</li>
+          </ul>
+        </article>
+
+        <article class="pricing-card featured">
+          <div class="name">Luxe Signature</div>
+          <div class="size">10 x 8 ft</div>
+          <div class="desc">Ideal for birthdays, grad parties, and mini event hall installs with stronger visual impact.</div>
+          <div class="price">$545</div>
+          <ul>
+            <li>Shimmer wall base</li>
+            <li>Fuller balloon coverage</li>
+            <li>Up to 3 colors</li>
+            <li>Setup + breakdown</li>
+          </ul>
+        </article>
+
+        <article class="pricing-card">
+          <div class="name">Luxe Grand</div>
+          <div class="size">12 x 8 ft</div>
+          <div class="desc">For larger photo areas, wider walls, and events that need a more dramatic finish.</div>
+          <div class="price">$710</div>
+          <ul>
+            <li>Extended shimmer base</li>
+            <li>Larger balloon install</li>
+            <li>Up to 3 colors</li>
+            <li>Setup + breakdown</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="two-col">
+        <div class="mini-card">
+          <small>EDIT HERE</small>
+          <h4>Most Requested Add-Ons</h4>
+          <ul>
+            <li>Additional balloon colors: <strong>+$20 to +$30 each</strong></li>
+            <li>Second garland or height variation: <strong>+$95 to +$185</strong></li>
+            <li>Full arch install: <strong>+$235 to +$395</strong></li>
+            <li>Half moon arch panel: <strong>+$95 to +$170</strong></li>
+            <li>Custom sign: <strong>+$50 to +$120</strong></li>
+            <li>Flower inserts: <strong>+$35 to +$90</strong></li>
+          </ul>
+        </div>
+
+        <div class="table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>Extra Styling Service</th>
+                <th>Starting Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>LED numbers</td>
+                <td>$75+</td>
+              </tr>
+              <tr>
+                <td>Additional arch backdrop panel</td>
+                <td>$85+</td>
+              </tr>
+              <tr>
+                <td>Mini pastry table styling</td>
+                <td>$95+</td>
+              </tr>
+              <tr>
+                <td>Mini mocktail table styling</td>
+                <td>$135+</td>
+              </tr>
+              <tr>
+                <td>Pastry + mocktail combo</td>
+                <td>$205+</td>
+              </tr>
+              <tr>
+                <td>Custom travel / premium venue handling</td>
+                <td>Quote</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div class="contact">
+          <h5>Booking</h5>
+          <p>
+            Final quotes depend on install complexity, venue rules,
+            delivery distance, pickup timing, and premium materials.
+          </p>
+        </div>
+        <div class="contact">
+          <h5>Socials</h5>
+          <p>
+            Instagram: @tsluxe.events<br>
+            TikTok: @tsluxe8
+          </p>
+        </div>
+        <div class="contact">
+          <h5>Contact</h5>
+          <p>
+            TSquared Luxe Events<br>
+            tsluxevent@gmail.com
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
