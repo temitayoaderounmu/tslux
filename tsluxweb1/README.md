@@ -1,7 +1,7 @@
-# tsLuxEvents Website Starter
+# tsLuxEvents Website
 
 This project is a beginner-friendly booking website for a balloon decor and event styling business.
-It uses only HTML, CSS, and vanilla JavaScript so it is easy to edit without a framework.
+It uses only HTML, CSS, and vanilla JavaScript.
 
 ## Project Structure
 
@@ -50,23 +50,3 @@ The root-level `booking.html`, `gallery.html`, and `services.html` files are red
 - `styles.css` controls the design of every page.
 - `script.js` injects the shared header and footer, runs the mobile menu, powers gallery filters, and validates the booking form.
 
-## How To Deploy
-
-### Option 1: GitHub Pages
-
-1. Upload the whole project to a GitHub repository.
-2. In the repo settings, open the Pages section.
-3. Set the deploy source to the main branch and root folder.
-4. Save and wait for GitHub to publish the site.
-
-### Option 2: Netlify
-
-1. Drag the full project folder into Netlify Drop.
-2. Or connect your GitHub repository to Netlify.
-3. Make sure the publish directory is the project root.
-
-## Future Upgrades
-
-- Connect the booking form to EmailJS for email notifications.
-- Connect the form to Google Forms if you want submissions stored in a spreadsheet.
-- Add a real backend later if you want admin dashboards, calendar logic, or payments.
