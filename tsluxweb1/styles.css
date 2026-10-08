@@ -10,7 +10,7 @@
   - To change card shapes or page spacing, edit the shared classes used throughout the site.
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap");
 
 :root {
   /*
@@ -163,24 +163,24 @@ h3,
 .price-value,
 .estimate-total__amount {
   margin: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Playfair Display", Georgia, serif;
   font-weight: 600;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 h1 {
-  font-size: clamp(2.8rem, 5.6vw, 4.8rem);
+  font-size: clamp(2.5rem, 5vw, 4.3rem);
   line-height: 1.04;
 }
 
 h2 {
-  font-size: clamp(2.1rem, 4.3vw, 3.2rem);
+  font-size: clamp(1.9rem, 3.9vw, 2.9rem);
   line-height: 1.06;
 }
 
 h3 {
-  font-size: 1.45rem;
+  font-size: 1.3rem;
   line-height: 1.2;
 }
 
