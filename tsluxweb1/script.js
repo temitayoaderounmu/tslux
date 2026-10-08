@@ -199,6 +199,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setupGalleryFilters();
   setupShimmerCalculator();
   setupBookingPage();
+  setupEstimateBar();
+  setupLightbox();
   initialiseEmailJs();
 });
 
@@ -1029,4 +1031,144 @@ function injectSkipLink() {
     "beforebegin",
     '<a class="skip-link" href="#main-content">Skip to main content</a>'
   );
+}
+
+/*
+  IMAGE LIGHTBOX
+  - Any photo inside <main> opens full-size when clicked or tapped.
+  - Arrow keys or swiping move between photos in the same section.
+  - Escape, the close button, or clicking outside the photo closes it.
+  - To exclude a photo, add data-no-lightbox to its <img> tag.
+*/
+function setupLightbox() {
+  const images = Array.from(document.querySelectorAll("main img")).filter(
+    (img) => !img.closest("a") && !img.hasAttribute("data-no-lightbox")
+  );
+  if (!images.length || typeof HTMLDialogElement === "undefined") return;
+
+  const dialog = document.createElement("dialog");
+  dialog.className = "lightbox";
+  dialog.setAttribute("aria-label", "Photo viewer");
+  dialog.innerHTML = `
+    <figure class="lightbox__figure">
+      <img class="lightbox__image" alt="">
+      <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+    <button class="lightbox__close" type="button" aria-label="Close photo">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous photo">&#8249;</button>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next photo">&#8250;</button>
+  `;
+  document.body.appendChild(dialog);
+
+  const bigImage = dialog.querySelector(".lightbox__image");
+  const caption = dialog.querySelector(".lightbox__caption");
+  const prevButton = dialog.querySelector(".lightbox__nav--prev");
+  const nextButton = dialog.querySelector(".lightbox__nav--next");
+  let group = [];
+  let index = 0;
+
+  const isVisible = (img) => img.offsetParent !== null;
+  const groupFor = (img) => {
+    const section = img.closest("section") || document.querySelector("main");
+    return images.filter((other) => section.contains(other) && isVisible(other));
+  };
+  const captionFor = (img) => {
+    const figcaption = img.closest("figure")?.querySelector("figcaption");
+    return (figcaption ? figcaption.textContent : img.alt || "").trim().replace(/\s+/g, " ");
+  };
+
+  function show(newIndex) {
+    index = (newIndex + group.length) % group.length;
+    const img = group[index];
+    bigImage.src = img.currentSrc || img.src;
+    bigImage.alt = img.alt;
+    caption.textContent = captionFor(img);
+    const multiple = group.length > 1;
+    prevButton.hidden = !multiple;
+    nextButton.hidden = !multiple;
+  }
+
+  images.forEach((img) => {
+    img.classList.add("is-zoomable");
+    img.tabIndex = 0;
+    img.setAttribute("role", "button");
+    img.setAttribute("aria-label", `View larger: ${img.alt || "photo"}`);
+    const open = () => {
+      group = groupFor(img);
+      show(group.indexOf(img));
+      dialog.showModal();
+      document.documentElement.classList.add("has-lightbox");
+    };
+    img.addEventListener("click", open);
+    img.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        open();
+      }
+    });
+  });
+
+  dialog.querySelector(".lightbox__close").addEventListener("click", () => dialog.close());
+  prevButton.addEventListener("click", () => show(index - 1));
+  nextButton.addEventListener("click", () => show(index + 1));
+  dialog.addEventListener("close", () => document.documentElement.classList.remove("has-lightbox"));
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog || event.target.classList.contains("lightbox__figure")) dialog.close();
+  });
+  dialog.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") show(index - 1);
+    if (event.key === "ArrowRight") show(index + 1);
+  });
+
+  let touchStartX = null;
+  dialog.addEventListener("touchstart", (event) => {
+    touchStartX = event.touches[0].clientX;
+  }, { passive: true });
+  dialog.addEventListener("touchend", (event) => {
+    if (touchStartX === null || group.length < 2) return;
+    const distance = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(distance) > 50) show(index + (distance < 0 ? 1 : -1));
+    touchStartX = null;
+  });
+}
+
+/*
+  MOBILE ESTIMATE BAR
+  - On phones and tablets, keeps the running total visible at the bottom of the
+    screen while the visitor picks packages and add-ons.
+  - Hides once the full estimate card comes into view and stays hidden below it.
+*/
+function setupEstimateBar() {
+  const card = document.querySelector(".estimate-card");
+  const amount = card?.querySelector(".estimate-total__amount");
+  if (!card || !amount) return;
+
+  if (!card.id) card.id = "estimate-summary";
+  const bar = document.createElement("div");
+  bar.className = "estimate-bar";
+  bar.innerHTML = `
+    <div>
+      <span class="estimate-bar__label">Estimated total</span>
+      <strong class="estimate-bar__amount"></strong>
+    </div>
+    <a class="estimate-bar__link" href="#${card.id}">See breakdown</a>
+  `;
+  document.body.appendChild(bar);
+
+  const barAmount = bar.querySelector(".estimate-bar__amount");
+  const sync = () => {
+    barAmount.textContent = amount.textContent.trim();
+  };
+  sync();
+  new MutationObserver(sync).observe(amount, { childList: true, characterData: true, subtree: true });
+
+  // Show the bar only while the estimate section is still further down the page.
+  // Once the visitor has reached it (or scrolled past it), keep the bar hidden.
+  const update = () => {
+    const reachedCard = card.getBoundingClientRect().top < window.innerHeight;
+    bar.classList.toggle("is-hidden", reachedCard);
+  };
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
 }
